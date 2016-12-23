@@ -222,20 +222,23 @@ FirebaseSearch.prototype.elasticsearch = {
     start: function () {
       return new Promise(function (resolve, reject) {
         var ref = firebaseSearch.ref;
-        var started;
+        //var started;
         firebaseSearch.elasticsearch.handlers = {
           child_added: function (snap) {
+            // 7storm7: Commented out since it misses first record of Firebase
+            /*
             if (!started) { // Skip the first child_added event. It's always an existing record. 
               started = true;
               resolve(snap.key);
             } else {
+            */
               firebaseSearch.fire('elasticsearch_child_added', addKeyToSnap(snap));
               // firebaseSearch.log('elasticsearch_child_added', snap.key);
               firebaseSearch.elasticsearch.create({
                 id: snap.key,
                 body: snap.val()
               });
-            }
+            //}
           },
           child_changed: function (snap) {
             firebaseSearch.fire('elasticsearch_child_changed', addKeyToSnap(snap));
