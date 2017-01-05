@@ -168,6 +168,14 @@ FirebaseSearch.prototype.elasticsearch = {
     });
     return toPromise(firebaseSearch.elasticsearch.client.search.bind(firebaseSearch.elasticsearch.client), params);
   },
+  scroll: function (params) {
+    var params = _.defaults(params, {
+      scroll: firebaseSearch.options.elasticsearch.scroll,
+      index: firebaseSearch.options.elasticsearch.index,
+      type: firebaseSearch.type
+    });
+    return toPromise(firebaseSearch.elasticsearch.client.scroll.bind(firebaseSearch.elasticsearch.client), params);
+  },
   firebase: { // Firebase index management
     build: function (returnPromise) {
       return firebaseSearch.getLastKey()
