@@ -1,4 +1,4 @@
-  var FirebaseSearch = require('./firebase-search.js');
+  var FirebaseSearch = require('./firebase-elasticsearch-driver.js');
   var firebase = require('firebase');
   var axios = require('axios');
   var _ = require('lodash');
