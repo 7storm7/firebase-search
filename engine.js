@@ -11,12 +11,15 @@
 
   var newItems = false;
 
-
-
-  firebase.initializeApp({
-    "databaseURL": "https://quiver-firebase-search-ad877.firebaseio.com",
-    "serviceAccount": "./service-account.json"
-  });
+// Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBWjMq1NXsdZwolnoWiuq4zh7VToYabYJE",
+    authDomain: "quiver-firebase-search-ad877.firebaseapp.com",
+    databaseURL: "https://quiver-firebase-search-ad877.firebaseio.com",
+    storageBucket: "quiver-firebase-search-ad877.appspot.com",
+    messagingSenderId: "1041580031639"
+  };
+  firebase.initializeApp(config);
 
   var proverbsRef = firebase.database().ref('kapakolsun/proverbs');
   var requestsRef = firebase.database().ref('kapakolsun/search-requests');
