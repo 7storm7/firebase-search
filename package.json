@@ -4,6 +4,7 @@
   "description": "Index your Firebase collections to Elasticsearch and/or Algolia",
   "main": "firebase-search.js",
   "scripts": {
+    "start": "node engine.js"
     "tunnel": "node tunnel.js",
     "test": "node test-elasticsearch.js && node test-algolia.js",
     "deploy-database": "firebase deploy --only database",
